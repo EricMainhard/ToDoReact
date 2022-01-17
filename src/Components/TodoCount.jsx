@@ -1,9 +1,9 @@
 import React from 'react'
 
-function TodoCount() {
+function TodoCount({totalTodos,completedTodos}) {
     return (
         <>
-            <h2>2 of 3 todo's completed 😎</h2>
+            <h2 className='todoCount'>{completedTodos} of {totalTodos} todo's completed {completedTodos > 0 ? '😎' : '🤨'}</h2>
         </>
     )
 }

@@ -1,18 +1,13 @@
 import React from 'react'
 import TodoItem from './TodoItem';
 
-const todos = [
-    {task: "Comprar pan", completed: false},
-    {task: "Retirar orden", completed: false},
-    {task: "Ver clase de Platzi", completed: true}
-];
-
-function TodoList() {
+function TodoList({searchedTodos,completeTodos,deleteTodos}) {
     return (
         <>
-            {todos.map((todo,i) => {
+            {searchedTodos.map((todo,i) => {
                 return(
-                    <TodoItem key={i} task={todo.task} completed={todo.completed}/>
+                    <TodoItem key={i} completeTodos={completeTodos} deleteTodos={deleteTodos}
+                    dataset={i} task={todo.task} completed={todo.completed}/>
                 )
             })} 
         </>

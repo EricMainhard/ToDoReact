@@ -1,9 +1,13 @@
 import React from 'react'
 
-function TodoItem({task,completed}) {
+function TodoItem({task,completed,completeTodos,dataset,deleteTodos}) {
     return (
         <div className='todoItem'>
-            <i className='symbol'>{completed === true ? '❎' : '✅'}</i>
+            <div className="todo-controls">
+                <i className='symbol complete-symbol' onClick={()=>{completeTodos(dataset)}}>
+                    {!completed ? '✅' : '🔄'}</i>
+                <i className='symbol delete-symbol' onClick={()=>{deleteTodos(dataset)}}>❎</i>
+            </div>
             <p className={completed === true ? 'complete' : 'pending'}>{task}</p>
         </div>
     )
