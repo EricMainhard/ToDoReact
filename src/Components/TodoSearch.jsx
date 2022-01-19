@@ -1,6 +1,9 @@
-import React, {useState} from 'react'
+import React, {useState,useContext} from 'react'
+import { TodoContext } from '../TodoContext'
 
-function TodoSearch({search,setSearch}) {
+function TodoSearch() {
+
+    const {search,setSearch} = useContext(TodoContext);
 
     return (
         <input type="text" placeholder='Search a task'

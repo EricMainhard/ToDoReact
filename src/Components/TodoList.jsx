@@ -1,16 +1,11 @@
 import React from 'react'
 import TodoItem from './TodoItem';
 
-function TodoList({searchedTodos,completeTodos,deleteTodos}) {
+function TodoList(props) {
     return (
-        <>
-            {searchedTodos.map((todo,i) => {
-                return(
-                    <TodoItem key={i} completeTodos={completeTodos} deleteTodos={deleteTodos}
-                    dataset={i} task={todo.task} completed={todo.completed}/>
-                )
-            })} 
-        </>
+        <section>  
+            {props.children}
+        </section>
     )
 }
 

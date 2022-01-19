@@ -39,6 +39,10 @@ body {
     text-decoration: line-through;
 }
 
+.icon{
+    cursor: pointer;
+}
+
 .todo-controls{
     position: absolute;
     top: 0;
