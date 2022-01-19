@@ -3,7 +3,7 @@ import TodoItem from './TodoItem';
 
 function TodoList(props) {
     return (
-        <section>  
+        <section className='todoList'>  
             {props.children}
         </section>
     )

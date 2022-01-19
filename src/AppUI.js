@@ -6,10 +6,12 @@ import TodoList from './Components/TodoList';
 import TodoItem from './Components/TodoItem';
 import {TodoContext} from './TodoContext';
 import CreateToDoButton from './Components/CreateToDoButton';
+import Modal from './Components/Modal';
+import {TodoForm} from './Components/TodoForm';
 
 function AppUI(){
 
-    const {error, loading, searchedTodos, completeTodos, deleteTodos} = useContext(TodoContext);
+    const {error, loading, searchedTodos, completeTodos, deleteTodos, openModal, setOpenModal} = useContext(TodoContext);
 
     return (
         <>  
@@ -18,7 +20,7 @@ function AppUI(){
             <TodoSearch/>
             <TodoList>
             {error && <p>Something went wrong...</p>}
-            {loading && <p>Loading...</p>}
+            {loading && <MyLoader/>}
             {(!loading && !searchedTodos) && <p>Add a task</p>}
             {searchedTodos.map((todo,i) => {
                 return(
@@ -27,7 +29,12 @@ function AppUI(){
                 )
             })}
             </TodoList>
-            <CreateToDoButton/>
+           {openModal && 
+            <Modal setOpenModal={setOpenModal} openModal={openModal}>                
+                <TodoForm/>
+            </Modal>
+            }
+            <CreateToDoButton setOpenModal={setOpenModal}/>
         </>
         );
 }

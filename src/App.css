@@ -1,3 +1,7 @@
+*{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+
 body {
     background-repeat: no-repeat;
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,121,76,1) 35%, rgb(223, 234, 236) 100%);
@@ -14,6 +18,9 @@ body {
     margin: auto;
     box-shadow: 1px 1px 10px 1px;
     padding: 2rem;
+    max-height: 75vh;
+    overflow-y: auto;
+    position: relative;
 }
 
 .todoCount{
@@ -31,7 +38,7 @@ body {
     padding: 1rem;
     text-align: center;
     box-shadow: 1px 1px 5px 1px;
-    margin: 1rem 0;
+    margin: 1rem auto;
     position: relative;
 }
 
@@ -43,23 +50,105 @@ body {
     cursor: pointer;
 }
 
+.loading{
+    text-align: center;
+    height: 5rem;
+    width: 100%;
+    margin: auto;
+}
+
 .todo-controls{
     position: absolute;
     top: 0;
     right: 0;
 }
 
+.todoList{
+    width: 80%;
+}
+
 .createToDoButton{
-    padding: 1rem;
-    border-radius: 1rem;
+    padding: 2rem;
+    border-radius: 2rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
     border: none;
     box-shadow: 1px 1px 5px 1px;
+    margin-top: 1rem;
+    z-index: 2;
+}
+
+.createToDoButton.--normal{
     background-color: transparent;
     color: rgb(223, 234, 236);
-    margin-top: 1rem;
+}
+
+.createToDoButton.--reverse{
+    color: transparent;
+    background-color: rgb(223, 234, 236);
 }
 
 .createToDoButton:hover{
     background-color: rgb(223, 234, 236);
     color: #020b28;
+}
+
+.modalBackground{
+    z-index: 1;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContent{
+    position: absolute;
+    width: 40%;
+    height: 80%;
+    border-radius: .5rem;
+    background-color: #68ac93;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.closeModal{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+.modalHeader{
+    text-align: center;
+}
+
+.modalBody{
+    flex-grow: 1;
+}
+.modalForm{
+    padding: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 100%;
+    justify-content: space-around;
+}
+.modalBody input {
+    height: 50%;
+    border-radius: .25rem;
+    border: none;
+    outline: none;
+}
+.modalBody button {
+    width: 100%;
+    border-radius: .25rem;
+    padding: 1rem;
+    border: none;
+    background-color: white;
 }
