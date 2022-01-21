@@ -1,5 +1,5 @@
 *{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -23,20 +23,14 @@ body {
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #020024;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
-
+  
 #root {
-    width: 80%;
+    width: 70%;
     max-width: 768px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     margin: auto;
     box-shadow: 1px 1px 10px 1px;
@@ -135,7 +129,8 @@ body {
 
 .modalContent{
     position: absolute;
-    width: 40%;
+    width: 90%;
+    max-width: 400px;
     height: 80%;
     border-radius: .5rem;
     background-color: #68ac93;
