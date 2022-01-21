@@ -7,6 +7,7 @@ import TodoItem from './Components/TodoItem';
 import {TodoContext} from './TodoContext';
 import CreateToDoButton from './Components/CreateToDoButton';
 import Modal from './Components/Modal';
+import {MyLoader} from './Components/MyLoader.jsx'
 import {TodoForm} from './Components/TodoForm';
 
 function AppUI(){

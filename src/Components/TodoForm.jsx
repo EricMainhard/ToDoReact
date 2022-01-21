@@ -26,11 +26,12 @@ const TodoForm = ()=>{
     }
 
     return(
-        <form onSubmit={onSubmit}>
-            <h3>Write a new task</h3>
-            <textarea onChange={onChange}></textarea>
-            <button type='button' onClick={onCancel}>CANCEL</button>
-            <button type='submit'>ADD</button>
+        <form className='modalForm' onSubmit={onSubmit}>
+            <textarea className='form_text' onChange={onChange}></textarea>
+            <div className="form_buttons">
+                <button className='form_button' type='button' onClick={onCancel}>CANCEL</button>
+                <button className='form_button' type='submit'>ADD</button>
+            </div>
         </form>
     )
 
