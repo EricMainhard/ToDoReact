@@ -74,8 +74,8 @@ const deleteTodos = (id) => {
             addTodo,
             error,
             loading,
-            openModal,
-            setOpenModal
+            setOpenModal,
+            openModal
         }}>
             {props.children}
         </TodoContext.Provider>
