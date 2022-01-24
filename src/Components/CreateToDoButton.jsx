@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext} from 'react';
 import {HiPlus,HiMinus} from "react-icons/hi";
 import { TodoContext } from '../TodoContext';
 
